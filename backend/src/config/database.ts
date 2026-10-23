@@ -8,6 +8,7 @@ const dbConfig: mysql.PoolOptions = {
   user: process.env.MYSQL_USER || 'portfolio_user',
   password: process.env.MYSQL_PASSWORD || 'PortfolioSecurePass2026!',
   database: process.env.MYSQL_DATABASE || 'portfolio_db',
+  charset: 'utf8mb4',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

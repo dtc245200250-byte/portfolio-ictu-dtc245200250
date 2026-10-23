@@ -57,6 +57,7 @@ for t in targets:
         edge_path,
         "--headless=new",
         "--disable-gpu",
+        "--virtual-time-budget=3500",
         f"--window-size={window}",
         f"--screenshot={dest_path}",
         url

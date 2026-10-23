@@ -4,6 +4,9 @@
 -- Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU)
 -- ==============================================================================
 
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
 CREATE DATABASE IF NOT EXISTS `portfolio_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `portfolio_db`;
 
