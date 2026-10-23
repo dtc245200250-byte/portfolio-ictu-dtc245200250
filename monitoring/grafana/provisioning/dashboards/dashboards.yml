@@ -1,0 +1,13 @@
+apiVersion: 1
+
+providers:
+  - name: 'Portfolio Monitoring Dashboards'
+    orgId: 1
+    folder: 'Đề tài 13 - Phan Quang Tùng'
+    folderUid: 'dtc245200250-folder'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/definitions

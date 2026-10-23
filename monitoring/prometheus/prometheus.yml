@@ -1,0 +1,42 @@
+# ==============================================================================
+# PROMETHEUS CONFIGURATION - ĐỀ TÀI 13
+# Sinh viên: Phan Quang Tùng - MSSV: DTC245200250 - Lớp: CNTTK23E
+# Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU)
+# ==============================================================================
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  scrape_timeout: 10s
+
+scrape_configs:
+  # 1. Prometheus Server Self-Monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # 2. cAdvisor (Container Resource Metrics: CPU, RAM, Network, Disk I/O)
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  # 3. Node Exporter (Host System Metrics)
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  # 4. MySQL Exporter (Database Performance & Connections)
+  - job_name: 'mysql-exporter'
+    static_configs:
+      - targets: ['mysqld-exporter:9104']
+
+  # 5. Nginx Prometheus Exporter (Reverse Proxy Requests, Connections)
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx-exporter:9113']
+
+  # 6. Backend API Health Check & Metrics
+  - job_name: 'backend'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['backend:5000']
