@@ -238,3 +238,9 @@ INSERT INTO `contact_messages` (`sender_name`, `sender_email`, `subject`, `messa
     'Hệ thống portfolio và triển khai Docker của sinh viên Phan Quang Tùng đáp ứng rất tốt các yêu cầu đề ra về cả ứng dụng, reverse proxy và monitoring.',
     TRUE
 );
+
+-- 8. Cấu hình xác thực tương thích cho phpMyAdmin
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'RootSuperSecurePass2026!';
+ALTER USER IF EXISTS 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'RootSuperSecurePass2026!';
+ALTER USER IF EXISTS 'portfolio_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PortfolioSecurePass2026!';
+FLUSH PRIVILEGES;
