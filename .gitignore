@@ -41,6 +41,17 @@ Thumbs.db
 *.swp
 *.swo
 
-# Temporary scripts
+# Temporary scripts & documents (kept locally)
 scratch/
 extracted_pdf.txt
+*.docx
+*.pdf
+screenshots/
+docs/screenshots/
+docs/*.docx
+scripts/capture_all_evidence.py
+scripts/generate_terminal_screenshots.py
+scripts/generate_word_report.py
+scripts/reseed_clean_utf8.py
+scripts/update_admin_password.py
+scripts/update_major.py

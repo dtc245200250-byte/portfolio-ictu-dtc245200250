@@ -46,8 +46,6 @@ services:
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
-      PMA_USER: ${MYSQL_USER:-portfolio_user}
-      PMA_PASSWORD: ${MYSQL_PASSWORD:-PortfolioSecurePass2026!}
       UPLOAD_LIMIT: 64M
     networks:
       - backend_net

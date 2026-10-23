@@ -242,13 +242,11 @@ Hệ thống tuân thủ nghiêm ngặt các tiêu chuẩn an toàn thông tin t
 
 ## 8. 📁 CẤU TRÚC THƯ MỤC DỰ ÁN
 
-```
-c:\All\Triển khai_Thi\
+```text
 ├── .env.example                               # File mẫu cấu hình biến môi trường
-├── .gitignore                                 # Danh sách loại trừ file nhạy cảm và build artifact
+├── .gitignore                                 # Danh sách loại trừ file nhạy cảm và tài liệu cục bộ
 ├── docker-compose.yml                         # Tệp điều phối chính 13 Containers Microservices
 ├── README.md                                  # Hướng dẫn chi tiết triển khai hệ thống (File này)
-├── Bao_Cao_De_Tai_13_Phan_Quang_Tung.docx     # Báo cáo Word chính thức (> 10 trang chuẩn ICTU)
 │
 ├── backend/                                   # Ứng dụng Backend RESTful API (Node.js + Express + TS)
 │   ├── Dockerfile                             # Multi-stage Docker build cho Backend
@@ -273,8 +271,7 @@ c:\All\Triển khai_Thi\
 │       └── context/                           # Quản lý trạng thái phiên đăng nhập (AuthContext)
 │
 ├── database/                                  # Khởi tạo Cơ sở dữ liệu MySQL
-│   └── init/
-│       └── 01-schema.sql                      # Kịch bản DDL tạo bảng & seed dữ liệu sinh viên Phan Quang Tùng
+│   └── init.sql                               # Kịch bản DDL tạo bảng & seed dữ liệu sinh viên Phan Quang Tùng
 │
 ├── nginx/                                     # Cổng Reverse Proxy Ngoại vi & SSL
 │   ├── nginx.conf                             # Cấu hình chính Nginx (Worker, Event, Log format, Gzip)
@@ -296,35 +293,18 @@ c:\All\Triển khai_Thi\
 │   └── promtail/
 │       └── promtail-config.yml                # Cấu hình thu thập log từ Docker socket và shared files
 │
-├── docs/                                      # Tài liệu & Tài nguyên học phần
-│   ├── assets/                                # Logo chính thức ICTU (Full & Crest)
-│   ├── screenshots/                           # Ảnh chụp minh chứng các dịch vụ hoạt động thực tế
-│   └── Bao_Cao_De_Tai_13_Phan_Quang_Tung.docx # Bản sao báo cáo Word đề tài
+├── docs/                                      # Tài nguyên thương hiệu
+│   └── assets/                                # Logo chính thức ICTU (Full & Crest)
 │
-└── scripts/                                   # Các kịch bản tự động hóa kiểm thử & hỗ trợ
+└── scripts/                                   # Các kịch bản quản trị hệ thống
     ├── test-logql.py                          # Script kiểm thử và xác thực 3 truy vấn LogQL từ Loki
-    ├── capture_all_evidence.py                # Script tự động chụp ảnh màn hình bằng Edge Headless
-    ├── generate_terminal_screenshots.py       # Script render ảnh terminal dark-mode bằng Pillow
-    └── generate_word_report.py                # Script tự động sinh Báo cáo Word chuẩn quy cách ICTU
+    ├── backup-db.bat / .sh                    # Script tự động sao lưu CSDL MySQL
+    └── restore-db.bat                         # Script tự động phục hồi CSDL MySQL
 ```
 
 ---
 
-## 9. 📸 MINH CHỨNG TRIỂN KHAI THỰC TẾ
-
-| Minh chứng | Mô tả | Ảnh chụp thực tế |
-| :--- | :--- | :---: |
-| **Trang chủ Portfolio** | Giao diện chính giới thiệu sinh viên Phan Quang Tùng (Cổng 8080) | ![Homepage](docs/screenshots/01_portfolio_homepage.png) |
-| **Admin Panel & Login** | Giao diện Đăng nhập Quản trị viên và xác thực JWT Token | ![Admin Login](docs/screenshots/02_portfolio_admin_login.png) |
-| **Prometheus Targets** | Danh sách 6 Scrape Targets của Prometheus đều đạt trạng thái UP 100% | ![Prometheus Targets](docs/screenshots/03_prometheus_targets.png) |
-| **Grafana Dashboard** | Bảng điều khiển trực quan hóa thời gian thực giám sát hạ tầng Container | ![Grafana Dashboard](docs/screenshots/05_grafana_overview.png) |
-| **Quản trị phpMyAdmin** | Giao diện quản trị CSDL quan hệ MySQL 8.0 qua cổng 8088 | ![phpMyAdmin](docs/screenshots/06_phpmyadmin.png) |
-| **Trạng thái 13 Containers** | Terminal chứng minh 13 Containers Docker đều đang Up và Healthy | ![Docker PS](docs/screenshots/07_docker_compose_ps.png) |
-| **Xác thực 3 LogQL Queries** | Kết quả thực thi kiểm thử 3 câu truy vấn Log tập trung từ Loki | ![LogQL Validated](docs/screenshots/08_loki_logql_validated.png) |
-
----
-
 <p align="center">
-  <b>BÁO CÁO HOÀN THÀNH BÀI TẬP LỚN MÔN TRIỂN KHAI VÀ QUẢN TRỊ HỆ THỐNG PHẦN MỀM</b><br/>
+  <b>HỆ THỐNG TRIỂN KHAI VÀ QUẢN TRỊ HỆ THỐNG PHẦN MỀM — ĐỀ TÀI 13</b><br/>
   <i>Khoa Công nghệ Thông tin — Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU) — Năm 2026</i>
 </p>
