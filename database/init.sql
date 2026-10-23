@@ -202,11 +202,11 @@ INSERT INTO `education` (`institution`, `degree`, `major`, `start_year`, `end_ye
 (
     'Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU)',
     'Cử nhân Công nghệ Thông tin',
-    'Kỹ thuật Phần mềm & Hệ thống Thông tin',
+    'Công nghệ Thông tin',
     '2022',
     '2026',
     '3.5 / 4.0',
-    'Chuyên sâu về kiến trúc hệ thống, phát triển ứng dụng Web hiện đại, quản trị hạ tầng phần mềm với Docker, cơ sở dữ liệu quan hệ và an toàn thông tin.',
+    'Đào tạo toàn diện về kiến trúc hệ thống, phát triển ứng dụng Web, quản trị hạ tầng phần mềm với Docker, cơ sở dữ liệu quan hệ và an toàn thông tin.',
     1
 );
 

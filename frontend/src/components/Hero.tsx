@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ profile }) => {
                 <span className="hero-meta-value">{p.student_id}</span>
               </div>
               <div className="hero-meta-item">
-                <span className="hero-meta-label">Lớp / Chuyên ngành</span>
+                <span className="hero-meta-label">Lớp / Ngành học</span>
                 <span className="hero-meta-value">{p.class_name} • {p.major}</span>
               </div>
               <div className="hero-meta-item">

@@ -38,7 +38,7 @@ export const About: React.FC<AboutProps> = ({ profile }) => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <Cpu size={18} color="#64748b" />
                 <div>
-                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Khoa & Chuyên ngành:</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Khoa & Ngành đào tạo:</div>
                   <div style={{ fontWeight: 600 }}>Khoa CNTT — {p.major || 'Công nghệ Thông tin'}</div>
                 </div>
               </div>

@@ -48,7 +48,7 @@ export const Education: React.FC<EducationProps> = ({ education }) => {
                 <h3 className="timeline-title">{item.degree}</h3>
                 <div className="timeline-subtitle">
                   <GraduationCap size={16} style={{ display: 'inline', marginRight: '6px' }} />
-                  {item.institution} • Chuyên ngành: {item.major}
+                  {item.institution} • Ngành: {item.major}
                 </div>
 
                 {item.description && (

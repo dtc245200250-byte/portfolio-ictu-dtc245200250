@@ -430,7 +430,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome }) 
                   />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Chuyên ngành đào tạo</label>
+                  <label className="form-label">Ngành đào tạo</label>
                   <input
                     type="text"
                     className="form-control"
@@ -889,7 +889,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome }) 
                           />
                         </div>
                         <div className="form-group">
-                          <label className="form-label">Chuyên ngành *</label>
+                          <label className="form-label">Ngành đào tạo *</label>
                           <input
                             type="text"
                             className="form-control"
