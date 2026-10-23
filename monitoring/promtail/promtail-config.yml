@@ -1,0 +1,63 @@
+# ==============================================================================
+# PROMTAIL LOG SHIPPER CONFIGURATION - ĐỀ TÀI 13
+# Sinh viên: Phan Quang Tùng - MSSV: DTC245200250 - Lớp: CNTTK23E
+# ==============================================================================
+
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+    batchwait: 1s
+    batchsize: 102400
+
+scrape_configs:
+  # 1. Thu thập log file Nginx Access Log
+  - job_name: nginx-access
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: nginx
+          service: nginx-reverse-proxy
+          stream: access
+          __path__: /var/log/nginx/access.log
+
+  # 2. Thu thập log file Nginx Error Log
+  - job_name: nginx-error
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: nginx
+          service: nginx-reverse-proxy
+          stream: error
+          __path__: /var/log/nginx/error.log
+
+  # 3. Thu thập log file Backend API Application Log
+  - job_name: backend-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: backend
+          service: portfolio-backend
+          stream: application
+          __path__: /var/log/app/backend.log
+
+  # 4. Thu thập Docker container logs qua Docker engine socket
+  - job_name: docker-containers
+    docker_sd_configs:
+      - host: unix:///var/run/docker.sock
+        refresh_interval: 5s
+    relabel_configs:
+      - source_labels: ['__meta_docker_container_name']
+        regex: '/(.*)'
+        target_label: 'container'
+      - source_labels: ['__meta_docker_container_name']
+        regex: '/(.*)'
+        target_label: 'job'
