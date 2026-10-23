@@ -119,11 +119,11 @@ INSERT INTO `admins` (`id`, `username`, `password_hash`, `full_name`, `email`, `
 VALUES (
     1,
     'admin',
-    '$2a$10$w3U/l3/qfN278Eskh63qxej4r4Hrk8y1bZJ9Pekq02Z73J4YgG5fK',
+    '$2b$10$eF0NK9fgIQkf77N8JfIUTOk6VDzD1Il9mrzkMmdpPKevWQsOZxReC',
     'Phan Quang Tùng',
     'phantung121206@gmail.com',
     'superadmin'
-) ON DUPLICATE KEY UPDATE `username`=`username`;
+) ON DUPLICATE KEY UPDATE `password_hash`='$2b$10$eF0NK9fgIQkf77N8JfIUTOk6VDzD1Il9mrzkMmdpPKevWQsOZxReC';
 
 -- 2. Thông tin Profile của sinh viên Phan Quang Tùng
 INSERT INTO `profile` (

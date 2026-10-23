@@ -16,6 +16,9 @@ const PORT = Number(process.env.PORT) || 5000;
 // ==========================================
 // BẢO MẬT & HARDENING MIDDLEWARE
 // ==========================================
+// Tin cậy Nginx Reverse Proxy phía trước
+app.set('trust proxy', 1);
+
 // 1. Helmet thiết lập các HTTP headers an toàn
 app.use(
   helmet({
